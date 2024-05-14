@@ -3,7 +3,7 @@ from collections import OrderedDict
 
 import numpy as np
 import einops
-import marching_cubes as mcubes
+import mcubes
 from omegaconf import OmegaConf
 from termcolor import colored, cprint
 from einops import rearrange, repeat
@@ -136,7 +136,7 @@ class RandTransformerModel(BaseModel):
         grid_table = torch.cat([pos_sos, grid_table], dim=0)
         return grid_table
 
-    def get_gen_order(self, sz, device):
+    def get_gen_order(self, sz, device='cpu'):
         # return torch.randperm(sz).to(device)
         return torch.randperm(sz, device=device)
         # return torch.arange(sz).to(device)
@@ -168,7 +168,8 @@ class RandTransformerModel(BaseModel):
         T, B = self.x_idx.shape[:2]
         
         if gen_order is None:
-            self.gen_order = self.get_gen_order(T, self.opt.device)
+            # self.gen_order = self.get_gen_order(T, self.opt.device)
+            self.gen_order = self.get_gen_order(T)
             self.context_len = -1 # will be specified in inference
         else:
             if len(gen_order) != T:
@@ -181,6 +182,8 @@ class RandTransformerModel(BaseModel):
             else:
                 self.gen_order = gen_order
 
+        # print(self.x_idx_seq.device)
+        # print(self.gen_order.device)
         x_idx_seq_shuf = self.x_idx_seq[self.gen_order]
         x_seq_shuffled = torch.cat([torch.LongTensor(1, bs).fill_(self.sos), x_idx_seq_shuf], dim=0)  # T+1
         pos_shuffled = torch.cat([self.grid_table[:1], self.grid_table[1:][self.gen_order]], dim=0)   # T+1, <sos> should always at start.

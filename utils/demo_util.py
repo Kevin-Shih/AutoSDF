@@ -17,6 +17,7 @@ from utils.qual_util import make_batch
 class Opt:
     def __init__(self):
         self.name = 'opt'
+        self.vq_note = 'default'
 
 
 def tensor_to_pil(tensor):
@@ -47,7 +48,7 @@ def get_shape_comp_opt(gpu_id=0):
     opt.device = 'cuda:%s' % gpuid[0]
     opt.batch_size = batch_size
     opt.max_dataset_size = max_dataset_size
-
+    
     opt.name = name
 
     utils.util.seed_everything(opt.seed)

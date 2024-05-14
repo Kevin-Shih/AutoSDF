@@ -31,19 +31,5 @@
         "renderedh5_dir_v2": "/home/nycu-reconstruction-2/AutoSDF/data/ShapeNet/ShapeNetRenderingh5_v2/",
         "renderedh5_dir_est": "/home/nycu-reconstruction-2/AutoSDF/data/ShapeNet/ShapeNetRenderingh5_v1_pred_3d/",
         "3dnnsdf_dir": "/home/nycu-reconstruction-2/AutoSDF/data/ShapeNet/SDF_full/"
-    },
-
-    
-    "old": {
-        "mesh_dir": "/ssd1/datasets/ShapeNet/ShapeNetCore.v1/",
-        "norm_mesh_dir": "/ssd1/datasets/ShapeNet/march_cube_objs_v1/",
-        "norm_mesh_dir_v2": "/ssd1/datasets/ShapeNet/march_cube_objs/",
-        "sdf_dir": "/ssd1/datasets/ShapeNet/SDF_v1/",
-        "sdf_dir_v2": "/ssd1/datasets/ShapeNet/SDF_v2/",
-        "rendered_dir": "/ssd1/datasets/ShapeNet/ShapeNetRendering/",
-        "renderedh5_dir": "/ssd1/datasets/ShapeNet/ShapeNetRenderingh5_v1/",
-        "renderedh5_dir_v2": "/ssd1/datasets/ShapeNet/ShapeNetRenderingh5_v2/",
-        "renderedh5_dir_est": "/ssd1/datasets/ShapeNet/ShapeNetRenderingh5_v1_pred_3d/",
-        "3dnnsdf_dir": "/ssd1/datasets/ShapeNet/SDF_full/"
     }
 }

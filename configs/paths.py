@@ -18,3 +18,6 @@ elif hostname == 'euclid':
     if username == 'yenchi':
         dataroot = '/data/yenchi/generative_transformers/data'
         logroot = '/data/yenchi/generative_transformers/logs'
+else:
+    dataroot = '/home/nycu-reconstruction-2/AutoSDF/data'
+    logroot = '/home/nycu-reconstruction-2/AutoSDF/logs'
