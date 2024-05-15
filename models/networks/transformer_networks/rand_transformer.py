@@ -48,6 +48,7 @@ class RandTransformer(nn.Module):
         encoder_layer = TransformerEncoderLayer(d_tf, nhead, dim_feedforward, dropout, activation='relu')
         encoder_norm = LayerNorm(d_tf)
         self.encoder = TransformerEncoder(encoder_layer, num_encoder_layers, encoder_norm)
+        # self.encoder = TransformerEncoder(encoder_layer, num_encoder_layers, encoder_norm, enable_nested_tensor= False)
         
         self.dec_linear = nn.Linear(d_tf, ntokens_vqvae)
 

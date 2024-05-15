@@ -2,9 +2,8 @@
 launchers/logs/*
 logs/*
 saved_ckpt/*
-demo_data/chair_mask.png
-demo_data/chair.jpg
-demo_data/shelf.jpg
-demo_data/shelf.png
-demo_data/shelf2.jpg
-demo_data/tmp.png
+demo_data/*
+!demo_data/chair_2598_mask.png
+!demo_data/chair_model.obj
+!demo_data/chair_2598.jpg
+results/*
